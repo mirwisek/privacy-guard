@@ -63,6 +63,7 @@ class RegisterFragment : Fragment(R.layout.layout_register) {
                 Observer { registerResult ->
                     registerResult ?: return@Observer
                     hideProgress()
+                    toggleFormInput(true)
                     registerResult.error?.let {
                         showRegistrationFailed(getString(R.string.signup_failed) + it.message)
                         it.printStackTrace()
@@ -123,6 +124,7 @@ class RegisterFragment : Fragment(R.layout.layout_register) {
         binding?.let { bind ->
             if (registerViewModel.registerFormState.value?.isDataValid == true) {
                 showProgress()
+                toggleFormInput(false)
                 registerViewModel.register(
                     LoggedInUser(
                         bind.editTextEmail.text.toString(),
@@ -134,6 +136,13 @@ class RegisterFragment : Fragment(R.layout.layout_register) {
             } else {
                 toast(getString(R.string.incorrect_fields))
             }
+        }
+    }
+
+    private fun toggleFormInput(enabled: Boolean) {
+        binding?.apply {
+            btnSignup.isEnabled = enabled
+            login.isEnabled = enabled
         }
     }
 
