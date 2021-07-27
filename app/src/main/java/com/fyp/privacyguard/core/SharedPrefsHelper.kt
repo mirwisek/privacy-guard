@@ -13,7 +13,6 @@ object SharedPrefsHelper {
     private const val KEY_USER_EMAIL = "email"
 
     fun saveUser(context: Context, user: LoggedInUser) {
-        log("Saving user $user")
         context.sharedPrefs.edit(true) {
             putString(KEY_USER_NAME, user.name)
             putString(KEY_USER_PHONE, user.phone)
@@ -28,7 +27,6 @@ object SharedPrefsHelper {
             user.phone = getString(KEY_USER_PHONE, null)
             user.email = getString(KEY_USER_EMAIL, null)
         }
-        log("Getting user $user")
         if(user.email == null)
             return null
         return user

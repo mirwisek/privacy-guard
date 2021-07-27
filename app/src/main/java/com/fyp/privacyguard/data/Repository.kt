@@ -1,11 +1,7 @@
 package com.fyp.privacyguard.data
 
-import android.content.Context
-import com.fyp.privacyguard.core.SharedPrefsHelper
 import com.fyp.privacyguard.data.model.LoggedInUser
 import com.fyp.privacyguard.network.ApiHelper
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.Exception
 
 /**

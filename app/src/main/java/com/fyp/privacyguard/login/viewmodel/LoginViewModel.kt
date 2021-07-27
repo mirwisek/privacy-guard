@@ -5,18 +5,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import android.util.Patterns
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.viewModelScope
 import com.fyp.privacyguard.data.Repository
 import com.fyp.privacyguard.data.Result
 
 import com.fyp.privacyguard.R
 import com.fyp.privacyguard.core.SharedPrefsHelper
-import com.fyp.privacyguard.data.model.LoggedInUser
 import com.fyp.privacyguard.login.ui.models.LoggedInUserView
 import com.fyp.privacyguard.login.ui.models.LoginFormState
 import com.fyp.privacyguard.login.ui.models.UserResult
-import com.google.firebase.auth.FirebaseAuth
-import kotlinx.coroutines.launch
 
 class LoginViewModel(private val app: Application, private val repository: Repository) : AndroidViewModel(app) {
 

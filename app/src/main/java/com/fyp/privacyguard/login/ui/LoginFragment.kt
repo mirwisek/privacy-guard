@@ -7,14 +7,11 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.annotation.StringRes
-import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.fyp.privacyguard.*
 import com.fyp.privacyguard.core.MainActivity
-import com.fyp.privacyguard.core.SharedPrefsHelper
 import com.fyp.privacyguard.databinding.LayoutLoginBinding
 import com.fyp.privacyguard.login.ui.models.LoggedInUserView
 import com.fyp.privacyguard.login.ui.models.Pages
