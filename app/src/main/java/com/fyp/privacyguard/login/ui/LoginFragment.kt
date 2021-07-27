@@ -133,9 +133,9 @@ class LoginFragment : Fragment(R.layout.layout_login) {
                                 getString(R.string.forget_pass_sent),
                                 Snackbar.LENGTH_LONG
                             )
-                        } else if(result.error != null) {
-                            bind.root.showSnackbar(getString(R.string.forget_request_failed))
-                            result.error.printStackTrace()
+                        } else {
+                            val msg = result.error?.message ?: getString(R.string.forget_request_failed)
+                            bind.root.showSnackbar(msg)
                         }
                         hideProgress()
                         toggleFormInput(true)
