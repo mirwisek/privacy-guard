@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Privacy Guard</string>
+
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_name_hint">Name</string>
+    <string name="login_mobile_number_hint">11 digit phone number</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome! "</string>
+    <string name="invalid_email">Not a valid email</string>
+    <string name="invalid_password">Password must be > 5 characters</string>
+    <string name="invalid_phone">Phone must be 11 digits</string>
+    <string name="invalid_name">Name must be at least 3 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="forget_request_failed">"Couldn't request password reset, please try again later"</string>
+    <string name="signup_failed">"Registration failed"</string>
+    <string name="incorrect_fields">Please correct the input fields, first!</string>
+    <string name="forget_pass_hint">Please enter an email, afterwards click forget password to rest!</string>
+    <string name="forget_pass_sent">We have sent you an email, please check your inbox for password recovery</string>
+    <string name="register_login_hint">Already have an account? Login</string>
+</resources>

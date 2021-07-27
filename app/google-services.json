@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "770439343700",
+    "project_id": "privacy-guard",
+    "storage_bucket": "privacy-guard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770439343700:android:fdef358e07662c46e8c7c1",
+        "android_client_info": {
+          "package_name": "com.fyp.privacyguard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770439343700-h00skik6d4o3jljc43usucmvo7e9scpl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fyp.privacyguard",
+            "certificate_hash": "01b71d19f962d58bb23b0094cd480560b32b60ef"
+          }
+        },
+        {
+          "client_id": "770439343700-ckfqeos3b88668qkrvcqqc5fhntos58v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwOGNuQjW_wDFDNPnHLO89gniDKedMeQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770439343700-ckfqeos3b88668qkrvcqqc5fhntos58v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
