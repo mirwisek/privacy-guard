@@ -14,7 +14,7 @@ object ApiHelper {
 
     private val service = RetrofitBuilder.service
 
-    const val BASE_URL = "http://192.168.10.7:5000/"
+    const val BASE_URL = "http://192.168.10.5:5000/"
 //    const val BASE_URL = "http://127.0.0.1:5000/"
 
     fun signup(user: LoggedInUser, onResult: (Result<ApiResult>) -> Unit) {
@@ -31,6 +31,8 @@ object ApiHelper {
                 val body = response.body()
                 if(response.code() == 201 && body != null) {
                     onResult(Result.success(body))
+                } else if(response.code() == 202 && body != null) { // On Duplicate, is not error
+                    onResult(Result.failure(Exception(body.error)))
                 } else {
                     // body will be null when status code is an error type
                     val errorBody = Gson().fromJson<ApiResult>(
