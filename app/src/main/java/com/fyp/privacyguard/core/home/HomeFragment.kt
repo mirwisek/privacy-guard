@@ -1,5 +1,6 @@
 package com.fyp.privacyguard.core.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -40,12 +41,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val adapter = GridAdapter(requireContext()) { entry ->
             when(entry) {
+                is GridEntry.CheckLogs -> {
+                    val intent = Intent(requireContext(), ListActivity::class.java)
+                    startActivity(intent)
+                }
                 is GridEntry.Logout -> {
                     vmMain.logout()
                     activity.switchActivity(FullscreenActivity::class.java)
                 }
                 is GridEntry.Settings -> {
-                    findNavController().navigate(nav_graph.dest.settings)
+                    startActivity(Intent(requireContext(), SettingsActivity::class.java))
+//                    findNavController().navigate(nav_graph.dest.settings)
                 }
                 else -> {
                     toast(entry.title)

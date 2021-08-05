@@ -24,5 +24,9 @@
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
+    <!-- USAGEAPP colors -->
+    <color name="gray">#EEEEEE</color>
+    <color name="gray_darken">#DDDDDD</color>
+    <color name="colorGray">#4A4A4A</color>
 
 </resources>

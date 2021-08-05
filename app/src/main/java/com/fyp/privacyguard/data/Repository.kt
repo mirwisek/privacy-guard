@@ -9,7 +9,7 @@ import java.lang.Exception
  * maintains an in-memory cache of login status and user credentials information.
  */
 
-class Repository {
+class Repository() {
 
     // in-memory cache of the loggedInUser object
     var user: LoggedInUser? = null

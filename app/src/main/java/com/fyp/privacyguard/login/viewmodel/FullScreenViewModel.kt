@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.fyp.privacyguard.App
 import com.fyp.privacyguard.core.SharedPrefsHelper
 import com.fyp.privacyguard.data.Repository
 import com.fyp.privacyguard.data.model.LoggedInUser
