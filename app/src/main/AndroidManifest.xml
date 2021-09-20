@@ -8,26 +8,34 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".App"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:theme="@style/Theme.PrivacyGuard">
+        android:theme="@style/Theme.PrivacyGuard"
+        tools:targetApi="n">
 
         <activity
             android:name=".core.ListActivity"
             android:launchMode="singleTask" />
         <service android:name=".service.AppService" />
         <service android:name=".service.AlarmService" />
+        <service android:name=".service.PhoneLogService"
+            android:foregroundServiceType="camera"/>
         <receiver
             android:name=".receiver.AlarmReceiver"
             android:exported="true">
@@ -69,7 +77,14 @@
             android:name=".core.MainActivity"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.PrivacyGuard" />
+            android:theme="@style/Theme.PrivacyGuard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".login.ui.FullscreenActivity"
             android:launchMode="singleTop"
@@ -77,12 +92,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/Theme.PrivacyGuard.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider
@@ -94,6 +104,17 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <receiver android:name=".receiver.AdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin" android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED"/>
+                <action android:name="android.app.action.ACTION_PASSWORD_FAILED"/>
+                <action android:name="android.app.action.ACTION_PASSWORD_SUCCEEDED"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 
